@@ -1,0 +1,106 @@
+/* reset default browser settings */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+
+/* styles for the body element */
+body {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size:16px;
+    background-color:azure;
+}
+
+/* style for the main container  */
+.main-container {
+    border:2px solid red;
+    height:100vh;
+    display:grid;
+    grid-template-columns:20% 70%;
+    grid-template-rows:10% 10% 60% 10%;
+    justify-content: center;
+    padding-top:1rem;
+    
+}
+
+/* styles for all the main container items */
+.structure {
+    border:2px solid blue;
+}
+
+/* styles for the div item one */
+.one {
+    grid-column:1/3;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+/* styles for the div item two */
+.two {
+    grid-column:1/3;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* styles for the div item five */
+.five {
+    grid-row:4/5;
+    grid-column:1/3;
+    display:flex;justify-content: end;
+    align-items: center;
+    
+}
+
+/* styles for the div heading id */
+.head-container {
+    border:2px solid black;
+    height:80%;
+    width:60%;
+    margin-left:2.5rem;
+    display:grid;
+    grid-template-columns:60% 10%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#list-name {
+    border:2px solid red;
+    width:60%;
+    height:70%;
+}
+
+#list-btn {
+    background-color:blue;
+    color:white;
+    height:70%;
+    width:7vw;
+    font-weight:bolder;
+}
+
+.favorite {
+    width:300px;
+}
+
+.svg {
+    width:20%;
+    height:auto;
+}
+
+
+/* styles for add task button */
+#task-btn {
+    height:60%;
+    width:5%;
+    margin-right:2rem;
+    font-size:3rem;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border-radius:10px;
+    background-color:blue;
+    color:white;
+}
