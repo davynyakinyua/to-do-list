@@ -60,7 +60,7 @@ body {
 
 #list-name {
     border:2px solid red;
-    width:60%;
+    width:90%;
     height:70%;
     display:flex;
     align-items: center;
@@ -91,6 +91,7 @@ body {
     display:grid;
     grid-template-rows:10% 70%;
     justify-items: center;
+    gap:0.4rem;
 }
 
 
@@ -101,11 +102,30 @@ body {
     display:flex;
     justify-content: center;
     align-items: center;
+    background-color:gold;
 }
 
 #left-panel {
     border:2px solid red;
     width:80%;
+    display:flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    gap:0.2rem;
+}
+
+.left-panel-items {
+    border:1px solid gold;
+    width:100%;
+    height:10%;
+    background-color:gold;
+    border-radius:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+
 }
 
 .svg {
@@ -125,5 +145,63 @@ body {
     justify-content: center;
     border-radius:10px;
     background-color:blue;
+    color:white;
+}
+
+/* styles for the dynamic form */
+.form {
+    border:2px solid red;
+    height:70%;
+    width:30%;
+    margin:auto;
+    margin-top:1.5rem;
+    background-color:gold;
+}
+
+/* styles for the form legend */
+.legend {
+    border:2px solid blue;
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+    padding:1rem;
+    height:100%
+
+}
+
+/* style for the task name input */
+.name-input {
+    height:2rem;
+}
+
+/* style for task name input and description */
+.name-input, .description {
+    font-size:1rem;
+    padding:0.2rem;
+}
+
+
+/* style for date input */
+.date-input {
+    width:60%;
+    font-size:1rem;
+    font-weight:bold;
+    padding:0.2rem;
+}
+
+/* style for time input */
+.time-input {
+    width:60%;
+    height:2rem;
+    padding:0 0.8rem 0 0.8rem;
+    font-size:1rem;
+}
+
+/* style for submit button for the form */
+.submit-btn {
+    height:10vh;
+    width:8vw;
+    background-color:blue;
+    border-radius:10px;
     color:white;
 }
