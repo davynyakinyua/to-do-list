@@ -1,4 +1,7 @@
-
+import { addTask } from "./list";
+import { Task } from "./task";
+import { list } from "./list";
+import { listArchive } from "./list";
 
 
 
@@ -10,6 +13,16 @@ export function dashboardList (name) {
     listName.textContent = name;
     listName.className = "list-title";
 
+}
+
+// function to add state of the default class
+export function defaultList(){
+    const display = document.getElementById("display");
+    // clear the display
+    display.innerHTML = "";
+    
+    display.textContent = "No Task Yet, Add Task";
+    display.className = "display-default";
 }
 
 // function to add list on the left panel
@@ -89,6 +102,29 @@ export function form (){
     form.appendChild(legend);
 
     display.appendChild(form);
+
+    submitBtn.addEventListener("click", function(event){
+         // prevent submit button default behavior
+        event.preventDefault();
+
+        // collect user input
+        const taskName = nameInput.value;
+        const description = descriptionInput.value;
+        const date = dateInput.value;
+        const time = timeInput.value;
+
+        // store data collected
+        console.log(`name: ${taskName} description:${description} date: ${date} time: ${time}`);
+
+        // create object to store the task
+        let task = new Task(taskName, description, date, time);
+        // call function to add task to specific list in the list archive
+        addTask(list, task);
+
+        console.log(listArchive);
+        
+        // clear form by displaying the list and the task added
+    });
 
 }
 
