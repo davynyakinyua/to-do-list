@@ -25,6 +25,70 @@ export function defaultList(){
     display.className = "display-default";
 }
 
+
+// display task on viewport
+function taskDisplay (){
+    const display = document.getElementById("display");
+    display.className = "task-background";
+    // clear the display
+    display.innerHTML = "";
+
+    // loop throught each item
+    for(const list in listArchive){
+        listArchive[list].forEach(item => {
+            // create a dynamic container for the task
+            let container = document.createElement("div");
+            container.className = "task-container";
+
+            // create a div for task name
+            let title = document.createElement("div");
+            title.className = "task-title";
+            title.textContent = item.name;
+
+            //  create a div for description
+            let des = document.createElement("div");
+            des.className = "task-description";
+            des.textContent = item.description;
+
+            // create a div container for date and time
+            let dateContainer = document.createElement("div");
+            dateContainer.className = "task-date-container";
+
+            // create divs for both date and time
+            let dateDiv = document.createElement("div");
+            dateDiv.className = "task-date";
+            dateDiv.textContent = item.date;
+            
+            let timeDiv = document.createElement("div");
+            timeDiv.className = "task-time";
+            timeDiv.textContent = item.time;
+        
+            // create a container for the button
+            let btnContainer = document.createElement("div");
+            btnContainer.className = "del-btn-container";
+            // create a button for delete task
+            let btn = document.createElement("button");
+            btn.id = "delete-btn";
+            btn.textContent = "Delete";
+
+      
+        
+            // append date div to container
+            dateContainer.appendChild(dateDiv);
+            dateContainer.appendChild(timeDiv);
+            btnContainer.appendChild(btn);
+            // append items to container
+            container.appendChild(title);
+            container.appendChild(des);
+            container.appendChild(dateContainer);
+            container.appendChild(btnContainer);
+
+            display.appendChild(container);
+
+        });
+    }
+}
+
 // function to add list on the left panel
 export function addLeftPanel (name){
     // select the left panel on the DOM
@@ -122,6 +186,9 @@ export function form (){
         addTask(list, task);
 
         console.log(listArchive);
+
+        // call task display to print task on the viewport
+        taskDisplay();
         
         // clear form by displaying the list and the task added
     });

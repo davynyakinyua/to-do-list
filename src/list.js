@@ -31,7 +31,3 @@ export function addTask (list, taskObj){
     listArchive[list].push(taskObj)
 }
 
-
-
-
-// function to retrieve task from a list
