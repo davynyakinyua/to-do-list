@@ -10,7 +10,7 @@ import './style.css'
 
 // default list
 dashboardList("default");
-addLeftPanel("defualt");
+addLeftPanel("default");
 defaultList();
 
 

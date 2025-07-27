@@ -9,6 +9,10 @@ export let list = "default";
 
 // function to get the name of the new list
 export function createList (){
+    const display = document.getElementById("display");
+    display.className = "task-background";
+    // clear the display
+    display.innerHTML = "";
     // prompt input from user to create a list
      list = prompt("enter list name");
     // call function for adding list name on the dashboard

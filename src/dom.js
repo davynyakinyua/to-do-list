@@ -1,6 +1,6 @@
 import { addTask } from "./list";
 import { Task } from "./task";
-import { list } from "./list";
+//import { list } from "./list";
 import { listArchive } from "./list";
 
 
@@ -27,15 +27,15 @@ export function defaultList(){
 
 
 // display task on viewport
-function taskDisplay (){
+function taskDisplay (listOutput){
     const display = document.getElementById("display");
     display.className = "task-background";
     // clear the display
     display.innerHTML = "";
 
-    // loop throught each item
-    for(const list in listArchive){
-        listArchive[list].forEach(item => {
+    // loop throught each object in the array
+    if(listArchive[listOutput]){
+        listArchive[listOutput].forEach(item => {
             // create a dynamic container for the task
             let container = document.createElement("div");
             container.className = "task-container";
@@ -102,6 +102,18 @@ export function addLeftPanel (name){
 
     // append addlist to left panel
     leftPanel.appendChild(addList);
+
+    // add event listener to display list items on the viewport
+    addList.addEventListener("click", function (event){
+        
+        console.log("list clicked!");
+        let selectedList = event.target.textContent;
+        dashboardList(selectedList);
+        console.log(selectedList);
+        taskDisplay(selectedList);
+        
+    });
+
 }
 
 // function to create a form input for task
@@ -182,15 +194,17 @@ export function form (){
 
         // create object to store the task
         let task = new Task(taskName, description, date, time);
-        // call function to add task to specific list in the list archive
-        addTask(list, task);
+
+        // list to add task
+        const listName = document.getElementById("list-name");
+        let selectedList = listName.textContent;
+        // call function to add task to list on the dashboard
+        addTask(selectedList, task);
 
         console.log(listArchive);
 
         // call task display to print task on the viewport
-        taskDisplay();
-        
-        // clear form by displaying the list and the task added
+        taskDisplay(selectedList);
     });
 
 }
