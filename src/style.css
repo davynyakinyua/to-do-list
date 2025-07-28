@@ -15,7 +15,6 @@ body {
 
 /* style for the main container  */
 .main-container {
-    border:2px solid red;
     height:100vh;
     display:grid;
     grid-template-columns:20% 70%;
@@ -25,10 +24,7 @@ body {
     
 }
 
-/* styles for all the main container items */
-.structure {
-    border:2px solid blue;
-}
+
 
 /* styles for the div item one */
 .one {
@@ -48,7 +44,6 @@ body {
 
 /* styles for the div heading id */
 .head-container {
-    border:2px solid black;
     height:80%;
     width:60%;
     margin-left:2.5rem;
@@ -59,7 +54,6 @@ body {
 }
 
 #list-name {
-    border:2px solid red;
     width:90%;
     height:70%;
     display:flex;
@@ -97,7 +91,6 @@ body {
 
 .favorite {
     width:300px;
-    border:2px solid red;
     width:80%;
     display:flex;
     justify-content: center;
@@ -106,7 +99,7 @@ body {
 }
 
 #left-panel {
-    border:2px solid red;
+
     width:80%;
     display:flex;
     justify-content: start;
@@ -217,12 +210,13 @@ body {
     justify-content: center;
     align-items: center;
     font-size:2rem;
+    background-color:white;
 }
 
 
 /* styles for the dynamic tasks */
 .task-background {
-    background-color:azure;
+    background-color:#344bb3;
     display:flex;
     flex-wrap:wrap;
     width:100%;

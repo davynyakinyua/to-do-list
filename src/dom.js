@@ -84,6 +84,11 @@ function taskDisplay (listOutput){
             container.appendChild(btnContainer);
 
             display.appendChild(container);
+            
+            // add event listener to delete button
+            btn.addEventListener("click", function (event){
+                console.log(event.target.textContent);
+            });
 
         });
     }
